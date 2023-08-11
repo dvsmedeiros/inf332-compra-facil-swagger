@@ -1,0 +1,3 @@
+server.servlet.context-path=/compra-facil
+springdoc.swagger-ui.operationsSorter=method
+
