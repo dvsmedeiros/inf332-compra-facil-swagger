@@ -32,6 +32,7 @@ public class OpenApiConfig {
                                        \n - Lucas Santos
                                        \n - Vanderlei Andrade                                                                                          
                                 """)
+                        .version("v1")
                         .termsOfService("terms")
                         .contact(new Contact().email("grupo3@inf332.com.br"))
                         .license(new License().name("GNU"))

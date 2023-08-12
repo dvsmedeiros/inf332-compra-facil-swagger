@@ -28,7 +28,7 @@ import java.util.UUID;
 import static org.springframework.hateoas.server.mvc.WebMvcLinkBuilder.linkTo;
 import static org.springframework.hateoas.server.mvc.WebMvcLinkBuilder.methodOn;
 
-@Tag(name = "Afiliado", description = "Afiliado Resource")
+@Tag(name = "Afiliados", description = "Afiliados Resource")
 @RestController
 public class AfiliadoController {
 
@@ -47,7 +47,7 @@ public class AfiliadoController {
             @ApiResponse(responseCode = "404", description = "afiliados não encontrados", content = @Content),
             @ApiResponse(responseCode = "500", description = "Erro interno", content = @Content),
     })
-    @GetMapping("/v1/afiliado")
+    @GetMapping("/afiliados")
     public ResponseEntity<Page<AfiliadoDTO>> get(
             @Parameter(description = "CNPJ do afiliado") @RequestParam(required = false) String cnpj,
             @Parameter(description = "Nome do afiliado") @RequestParam(required = false) String nome,
@@ -80,7 +80,7 @@ public class AfiliadoController {
             @ApiResponse(responseCode = "404", description = "afiliado não encontrado", content = @Content),
             @ApiResponse(responseCode = "500", description = "Erro interno", content = @Content),
     })
-    @GetMapping("/v1/afiliado/{id}")
+    @GetMapping("/afiliados/{id}")
     public ResponseEntity<AfiliadoDTO> getId(
             @Parameter(description = "ID do afiliado") @PathVariable String id) {
         try {
@@ -111,7 +111,7 @@ public class AfiliadoController {
             @ApiResponse(responseCode = "400", description = "Parâmetros fornecidos inválidos", content = @Content),
             @ApiResponse(responseCode = "500", description = "Erro interno", content = @Content),
     })
-    @PostMapping("/v1/afiliado")
+    @PostMapping("/afiliados")
     public ResponseEntity<AfiliadoDTO> post(
             @Parameter(description = "Dados do afiliado") @RequestBody AfiliadoDTO afiliado) {
 
@@ -152,7 +152,7 @@ public class AfiliadoController {
             @ApiResponse(responseCode = "404", description = "afiliado não encontrado", content = @Content),
             @ApiResponse(responseCode = "500", description = "Erro interno", content = @Content),
     })
-    @PutMapping("/v1/afiliado/{id}")
+    @PutMapping("/afiliados/{id}")
     public ResponseEntity<AfiliadoDTO> put(
             @Parameter(description = "ID do afiliado") @PathVariable String id,
             @Parameter(description = "Dados do afiliado à serem atualizados") @RequestBody AfiliadoDTO afiliado) {
@@ -186,7 +186,7 @@ public class AfiliadoController {
             @ApiResponse(responseCode = "404", description = "afiliado não encontrado", content = @Content),
             @ApiResponse(responseCode = "500", description = "Erro interno", content = @Content),
     })
-    @DeleteMapping("/v1/afiliado/{id}")
+    @DeleteMapping("/afiliados/{id}")
     public ResponseEntity<IdDTO> delete(
             @Parameter(description = "ID do afiliado") @PathVariable String id) {
         Optional<IdDTO> deleted = repository.delete(id);
